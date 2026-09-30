@@ -3,48 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Posture Guard AI</title>
+  <title>Posture Guard</title>
   <link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
   <div class="app-container">
-    <!-- Шапка приложения -->
     <header class="header">
       <div class="brand">
         <div id="header-dot" class="status-dot green"></div>
         <h1>Posture Guard</h1>
-        <small>AI HUD</small>
+        <small>AI</small>
       </div>
       <div class="header-actions">
         <span id="status" class="badge">Загрузка...</span>
       </div>
     </header>
 
-    <!-- Основная сетка -->
     <main class="grid">
-      <!-- Видеоблок -->
       <section id="main-video-card" class="card video-card">
         <div class="video-container">
           <video id="webcam" autoplay playsinline muted></video>
           <canvas id="output_canvas"></canvas>
-          <div id="gesture-badge" class="video-tag">🟢 Поза ровная</div>
+          <div id="gesture-badge" class="video-tag">Поза ровная</div>
         </div>
         <div style="display: flex; gap: 8px;">
-          <button id="calibrate-btn" class="btn btn-primary" style="flex: 1;">🎯 Калибровка (Наклон)</button>
-          <button id="pip-btn" class="btn btn-secondary">📺 PiP Режим</button>
+          <button id="calibrate-btn" class="btn btn-primary" style="flex: 1;">Калибровка</button>
+          <button id="pip-btn" class="btn btn-secondary">PiP</button>
         </div>
       </section>
 
-      <!-- Правая панель / Статистика -->
       <aside class="stats-column">
-        <!-- Блок статуса/предупреждения -->
         <div id="alert-box" class="card alert-card">
-          <span id="alert-text" class="alert-title">✅ Входные данные корректны. Поза ровная.</span>
+          <span id="alert-text" class="alert-title">Всё отлично, поза ровная.</span>
         </div>
 
-        <!-- Переключатель периодов -->
         <div class="timeframe-card card">
-          <span class="timeframe-label">Период статистики:</span>
+          <span class="timeframe-label">Период:</span>
           <div class="timeframe-tabs">
             <button class="tab-btn active" data-time="10m">10 мин</button>
             <button class="tab-btn" data-time="30m">30 мин</button>
@@ -52,7 +46,6 @@
           </div>
         </div>
 
-        <!-- Счётчики событий -->
         <div class="counters-grid" style="grid-template-columns: repeat(2, 1fr);">
           <div class="card counter-card red-border">
             <span class="counter-label">Сутулость</span>
@@ -72,10 +65,9 @@
           </div>
         </div>
 
-        <!-- Метрика: Статус осанки -->
         <div class="card metric-card">
           <div class="metric-head">
-            <span>Качество осанки</span>
+            <span>Осанка</span>
             <span id="posture-status" class="status-text good">ОК</span>
           </div>
           <div class="progress-bg">
@@ -83,13 +75,12 @@
           </div>
         </div>
 
-        <!-- Метрика: Моргание -->
         <div class="card metric-card">
           <div class="metric-head">
-            <span>Морганий (за мин)</span>
+            <span>Моргания (за мин)</span>
             <span id="blink-count" class="metric-value">0</span>
           </div>
-          <span class="metric-sub">Норма: 12-20 в минуту</span>
+          <span class="metric-sub">Норма: 12-20</span>
         </div>
       </aside>
     </main>
@@ -97,4 +88,4 @@
 
   <script type="module" src="src/main.js"></script>
 </body>
-</html>
+</html> 
